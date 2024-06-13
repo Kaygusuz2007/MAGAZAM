@@ -1,0 +1,116 @@
+﻿@model List<MAGAZA.Models.Magaza>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/css/bootstrap.min.css"rel="stylesheet"/>
+    <link rel="stylesheet" href="~/StyleSheet1.css"/>
+    <title>Index</title>
+</head>
+<body class="bar">
+   <div class="container-fluid ">
+       <div class="col ">
+           <div class="row bar ">
+               <div class="col ">
+                   <a class="mt-5 pt-5" href="/Main/Index"><img src="~/img/Siyah Beyaz Sade Butik Temalı Logo (1).png" width="90" height="90" /></a>
+               </div>
+           </div>
+       </div>
+       <div class="col bar">
+           <div class="row">
+              
+               <div class="col-2 bar ">
+                   
+                   <div class="container bar">
+                       <form action="/Main/turegore" method="post">
+                           <div class="col">
+                               <input class="rounded-3" type="text" name="isim" placeholder="Ürün Türü Giriniz" />
+                           </div>
+                           <div class="col mt-2">
+                               <input class="rounded-3" type="submit" value="Ürünü Ara" />
+                           </div>
+                       </form>
+                       <form action="/Main/fiyatagore" method="post">
+                           <div class="col mt-5">
+                               <input class="rounded-3" type="text" name="fiyat1" placeholder="min fiyat" /><br />
+                               <input class="rounded-3" type="text" name="fiyat2" placeholder="max fiyat" />
+                           </div>
+                           <div class="col mt-2">
+                               <input class="rounded-3" type="submit" value="Ürünü Ara" />
+                           </div>
+                       </form>
+                      
+                       <div class="col mt-5">
+                           <a class="textcolor" href="#">Bileklik</a>
+                       </div>
+                       <div class="col mt-5">
+                           <a class="textcolor" href="#">Saat</a>
+                       </div><div class="col mt-5">
+                           <a class="textcolor" href="#">Ayakkabı</a>
+                       </div>
+                       <div class="col mt-5">
+                           <a class="textcolor" href="#">Pantolon</a>
+                       </div>
+                       <div class="col mt-5">
+                           <a class="textcolor" href="#">Kolye</a>
+                       </div>
+                       <div class="col mt-5">
+                           <a class="textcolor" href="#">T-shirt</a>
+                       </div>
+                       <div class="col mt-5">
+                           <a class="textcolor" href="/Main/Eklesayfasi">Ürün Ekle</a>
+                       </div>
+                   </div>
+                   
+                  
+               </div>
+               <div class="col-10 bar">
+                   <div class="container ">
+                       <div class="row">
+                           @foreach (var item in Model)
+                           {
+                               <div class="col-md-6 col-lg-6 d-flex  bg-gradient">
+                                   <div class="book-wrap d-lg-flex bg-gradient mt-2">
+                                       <div class="img d-flex justify-content-end" style="background-image: url(@item.urungorsel);">
+                                           
+                                       </div>
+                                       <div class="text ps-4">
+                                           <div class="col-8 row">
+                                               <label class="textcolor">Ürün Türü: </label> <p class="mb-2"><span class="price textcolor">@item.urunturu</span></p>
+                                           </div>
+
+
+                                           <h2><a href="#">@item.urunad</a></h2>
+                                           <div class="col-12 row">
+                                               <label class="textcolor">Ürün Açıklaması: </label> <p class="mb-2"><span class="price textcolor">@item.urunaciklama</span></p>
+                                           </div>
+                                           <div class="col-12 row">
+                                               <label class="textcolor">Ürün Fiyat:   </label> <p class="mb-2"><span class="price textcolor">@item.fiyat</span></p>
+                                           </div>
+                                           <div class="row">
+                                               <form method="post" action="/Main/sil/@item.Id">
+
+                                                   <button style="color:white" type="submit" class="btn  bg-dark">Ürünü Sil</button>
+                                               </form>
+                                               <form method="post" action="/Main/guncelle/@item.Id" class="mt-2">
+
+                                                   <button type="submit" class="btn  bg-dark" style="color:white">Ürünü Güncelle</button>
+                                               </form>
+                                           </div>
+
+                                       </div>
+                                   </div>
+                               </div>
+
+                           }
+                          
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+</body>
+</html>

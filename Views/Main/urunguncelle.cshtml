@@ -1,0 +1,60 @@
+﻿@model List<MAGAZA.Models.Magaza>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/StyleSheet1.css" />
+    <title>urunguncelle</title>
+</head>
+<body class="bar">
+    <div class="container bar d-flex justify-content-center mt-5">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <form action="/Main/urunguncelle/@item.Id" method="post" enctype="multipart/form-data">
+                    <div class="col mt-5">
+                        <div class="row mt-5">
+                            <div class="col">
+                                <input class="rounded-3 form-control" id=" " type="file" name="urungorsel" />
+                            </div>
+                        </div>
+                        <div class="row mt-5">
+                            <div class="col">
+                                <input class="rounded-3" type="text" name="urunturu" placeholder="@item.urunturu" />
+                            </div>
+                        </div>
+                        <div class="row mt-5">
+                            <div class="col">
+                                <input class="rounded-3" type="text" name="urunad" placeholder="@item.urunad" />
+                            </div>
+                        </div>
+                        <div class="row mt-5">
+                            <div class="col">
+                                <input class="rounded-3" type="text" name="urunaciklama" placeholder="@item.urunaciklama" />
+                            </div>
+                        </div>
+                        <div class="row mt-5">
+                            <div class="col">
+                                <input class="rounded-3" type="text" name="fiyat" placeholder="@item.fiyat" />
+                            </div>
+                        </div>
+                        <div class="row mt-5">
+                            <div class="col">
+                                <input style="width:190px;" class="rounded-3 buttonss" type="submit" value="Güncelle" />
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            }
+
+        </div>
+        
+    </div>
+</body>
+</html>

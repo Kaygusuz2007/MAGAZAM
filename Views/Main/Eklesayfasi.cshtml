@@ -1,0 +1,53 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/StyleSheet1.css" />
+    <title>Eklesayfasi</title>
+</head>
+<body class="bar">
+    <div class="container bar d-flex justify-content-center mt-5">
+        <form action="/Main/Ekle" method="post" enctype="multipart/form-data">
+            <div class="col mt-5">
+                <div class="row mt-5">
+                    <div class="col">
+                        <input  class="rounded-3 form-control" id=" " type="file" name="urungorsel"/>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col">
+                        <input class="rounded-3" type="text" name="urunturu" placeholder="Ürün Türü" />
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col">
+                        <input class="rounded-3" type="text" name="urunad" placeholder="Ürün Adı" />
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col">
+                        <input class="rounded-3" type="text" name="urunaciklama" placeholder="Ürün Açıklaması" />
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col">
+                        <input class="rounded-3" type="text" name="fiyat" placeholder="Ürün Fiyatı" />
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col">
+                        <input style="width:190px;" class="rounded-3 buttonss" type="submit" value="Ekle" />
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
